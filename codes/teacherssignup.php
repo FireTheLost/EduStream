@@ -45,18 +45,16 @@ input[type="submit"]:hover {
 <div>
 <section class="signup-form">
   <div>
-  <h2>Sign Up</h2>
-  <form action="..\loginincludes\signup.inc.php" method="post">
+  <h2>Teacher Sign Up</h2>
+  <form action="..\loginincludes\teacherssignup.inc.php" method="post">
   <div>
     <input type="text" name="name" placeholder=" Full Name...">
     <br>    
     <input type="text" name="email" placeholder=" Email...">
-    <br>    
-    <input type="text" name="uid" placeholder=" Username...">
     <br>  
-    <input type="text" name="sub1" placeholder=" Enter Subject Preference 1 (Refer To Subject Menu)...">
+    <input type="text" name="sub1" placeholder=" Enter Subject Expertise 1 (Refer To Subject Menu)...">
     <br>    
-    <input type="text" name="sub2" placeholder=" Enter Subject Preference 2 (Refer To Subject Menu)...">
+    <input type="text" name="sub2" placeholder=" Enter Subject Expertise 2 (Refer To Subject Menu)...">
     <br>    
     <input type="password" name="pwd" placeholder=" Password...">
     <br>    
@@ -64,7 +62,7 @@ input[type="submit"]:hover {
     <br>
     <br>
     <button type="submit" name="submit">Sign Up</button>
-    <p>Already Have An Account? <a href="login.php">Login Here</a></p>
+    <p>Already Have An Account? <a href="teacherslogin.php">Login Here</a></p>
   </div>
   </form>
   </div>

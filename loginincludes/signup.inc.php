@@ -5,6 +5,8 @@ if (isset($_POST["submit"]))
   $name=$_POST["name"];
   $email=$_POST["email"];
   $username=$_POST["uid"];
+  $sub1=$_POST["sub1"];
+  $sub2=$_POST["sub2"];
   $pwd=$_POST["pwd"];
   $pwdRepeat=$_POST["pwdrepeat"];
 
@@ -37,7 +39,7 @@ if (isset($_POST["submit"]))
     exit();
   }
 
-  createUser($conn, $name, $email, $username, $pwd, $date);
+  createUser($conn, $name, $email, $username, $pwd, $sub1, $sub2);
 
 }
 else

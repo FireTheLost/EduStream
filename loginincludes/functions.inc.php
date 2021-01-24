@@ -82,9 +82,9 @@ function uidExists($conn, $username, $email)
   mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $name, $email, $username, $pwd)
+function createUser($conn, $name, $email, $username, $pwd, $sub1, $sub2)
 {
-  $sql="INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
+  $sql="INSERT INTO users (usersName, usersEmail, usersUid, usersPwd, usersSub1, usersSub2) VALUES (?, ?, ?, ?, ?, ?);";
   $stmt=mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql))
   {
@@ -94,7 +94,7 @@ function createUser($conn, $name, $email, $username, $pwd)
 
   $hashedPwd=password_hash($pwd, PASSWORD_DEFAULT);
 
-  mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hashedPwd);
+  mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $username, $hashedPwd, $sub1, $sub2);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
   header("location: ../codes/signup.php?error=none");
@@ -139,6 +139,7 @@ function loginUser($conn, $username, $pwd)
     session_start();
     $_SESSION["userid"]=$uidExists["usersId"];
     $_SESSION["useruid"]=$uidExists["usersUid"];
+    $_SESSION["userType"]="Student";
     header("location: ../codes/index.php");
     exit();
   }

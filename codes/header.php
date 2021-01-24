@@ -1,4 +1,4 @@
-<?php
+	<?php
   session_start();
 ?>
 
@@ -22,13 +22,29 @@ a	{text-decoration: none;
       <?php
         if(isset($_SESSION["useruid"]))
         {
-	  echo "<button><a href='#'>Profile</a></button>";
           echo "<button><a href='../loginincludes/logout.inc.php'>Logout</a></button>";
+          if (isset($_SESSION["userType"]))
+          {
+            if ($_SESSION["userType"]==="Teacher")
+            {
+              echo '<button><a href="addClass.php">Create New Class</a></button>';
+            }
+            if ($_SESSION["userType"]==="Student")
+            {
+              echo '<button><a href="allclasses.php">Browse Classes</a></button>';
+              echo '<form action="search.php" method="POST">
+                <input id="searchbar" style="width: 300px;" type="text" name="search" placeholder="Search For Classes By Subject, Date, Etc...">
+                <button id="searchbutton" type="submit" name="submit-search">Search</button>
+              </form>';
+            }
+          }
         }
         else
 	{
-          echo '<button><a href="signup.php">Sign Up</a></button>';
-	  echo '<button><a href="login.php">Login</a></button>';
+          echo '<button><a href="signup.php">Sign Up As Student</a></button>';
+          echo '<button><a href="teacherssignup.php">Sign Up As Teacher</a></button>';
+	  echo '<button><a href="login.php">Login As Student</a></button>';
+          echo '<button><a href="teacherslogin.php">Login As Teacher</a></button>';
         }
        ?>
      </ol>

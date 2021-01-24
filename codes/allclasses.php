@@ -20,6 +20,7 @@
                 <h3>Class Duration: ".$row['classesDuration']." Minutes</h3>
                 <p>Start Date&nbsp".$row['classesStart']."&nbsp|&nbspEnd Date:&nbsp".$row['classesEnd']."</p>
                 <p>Time:&nbsp".$row['classesTiming']." | Cost: $".$row['classesCost']."</p>
+                <p>Link:&nbsp".$row['classesLink']."</p>
               </div>
               <br>";
       }

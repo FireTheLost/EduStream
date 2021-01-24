@@ -9,15 +9,39 @@ ol	{list-style-type: none;}
 a	{text-decoration: none;
 	 margin: 10px;}
 
+button {
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid #E65F42;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #E65F42;
+  color: white;
+}
+
+img	{height:75px;}
+
 </style>
 
 <!doctype html>
 <html lang="en">
   <head>
+<link rel="shortcut icon" type="image/ico" href="..\images\EduStream.ico"/>
     <meta charset="utf-8">
     <title>EduStream</title>
   </head>
-  <body>
+  <body bgcolor="#eeeeee">
+<img src="..\images\EDUSTREAM.png" alt="EduStream Logo">
+    <h1 style="font-family:verdana">EduStream</h1>
     <ol>
       <?php
         if(isset($_SESSION["useruid"]))

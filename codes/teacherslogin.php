@@ -45,7 +45,7 @@ input[type="submit"]:hover {
 <div>
 <section>
   <div>
-  <h2>Login</h2>
+  <h2>Teachers Login</h2>
   <form action="..\loginincludes\teacherslogin.inc.php" method="post">
   <div>
     <input type="text" name="uid" placeholder=" Email...">
